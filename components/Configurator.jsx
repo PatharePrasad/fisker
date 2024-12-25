@@ -13,7 +13,7 @@ function Configurator() {
       <div className="my-4">
         <h3 className="mb-2 text-lg font-bold">Exterior Color</h3>
 
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {new Array(6).fill(0).map(
             (
               _,
@@ -30,7 +30,7 @@ function Configurator() {
                   width={0}
                   height={0}
                   sizes="100%"
-                  className="w-12"
+                  className="w-11"
                 />
               </button>
             ),
