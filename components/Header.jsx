@@ -3,7 +3,7 @@ import { RiGlobalLine } from "react-icons/ri";
 
 function Header() {
   return (
-    <header className="mb-5">
+    <header className="mb-4">
       <section className="mb-2 bg-gray-200 py-1 text-center text-sm font-medium">
         <p>
           All electric &#x2022; Dynamic &#x2022; Driver Range &#x2022; MKBHD{" "}
