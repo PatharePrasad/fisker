@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { exteriorSwatch, interiorSwatch, wheelSwatch } from "@/lib/swatch";
 
-function Configurator() {
+function Configurator({ onChange, exterior, interior, wheel }) {
   return (
     <>
       <h1 className="mb-4 text-4xl font-bold">Fisker Ocean</h1>
@@ -18,8 +18,8 @@ function Configurator() {
           {exteriorSwatch.map((swatch) => (
             <button
               key={swatch.id}
-              className={`${swatch.id === 1 && "ring"} rounded-full ring-blue-300 duration-100 hover:scale-105`}
-              onClick={() => console.log(i + 1)}
+              className={`${swatch.name === exterior && "ring"} rounded-full ring-blue-300 duration-100 hover:scale-105`}
+              onClick={() => onChange("exterior", swatch.name)}
             >
               <Image
                 src={swatch.src}
@@ -34,16 +34,16 @@ function Configurator() {
         </div>
       </div>
 
-      {/* Wheel Color */}
+      {/* Interior */}
       <div className="my-4">
-        <h3 className="mb-2 text-lg font-bold">Wheel Options</h3>
+        <h3 className="mb-2 text-lg font-bold">Interior</h3>
 
         <div className="flex gap-2">
           {interiorSwatch.map((swatch) => (
             <button
               key={swatch.id}
-              className={`${swatch.id === 0 && "ring"} rounded-full ring-blue-300 duration-100 hover:scale-105`}
-              onClick={() => console.log(swatch.id + 1)}
+              className={`${swatch.name === interior && "ring"} rounded-full ring-blue-300 duration-100 hover:scale-105`}
+              onClick={() => onChange("interior", swatch.name)}
             >
               <Image
                 src={swatch.src}
@@ -58,16 +58,16 @@ function Configurator() {
         </div>
       </div>
 
-      {/* Interior Color */}
+      {/* Wheel Options */}
       <div className="my-4">
-        <h3 className="mb-2 text-lg font-bold">Interior Color</h3>
+        <h3 className="mb-2 text-lg font-bold">Wheel Options</h3>
 
         <div className="flex gap-2">
           {wheelSwatch.map((swatch) => (
             <button
               key={swatch.id}
-              className={`${swatch.id === 0 && "ring"} ring-blue-300 duration-100 hover:scale-105`}
-              onClick={() => console.log(swatch.id + 1)}
+              className={`${swatch.name === wheel && "ring"} ring-blue-300 duration-100 hover:scale-105`}
+              onClick={() => onChange("wheel", swatch.name)}
             >
               <Image
                 src={swatch.src}
