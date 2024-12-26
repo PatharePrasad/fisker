@@ -18,7 +18,7 @@ function Configurator({ onChange, exterior, interior, wheel }) {
           {exteriorSwatch.map((swatch) => (
             <button
               key={swatch.id}
-              className={`${swatch.name === exterior && "ring"} rounded-full ring-blue-300 duration-100 hover:scale-105`}
+              className={`${swatch.name === exterior && "ring"} rounded-full ring-blue-300 ring-offset-2 duration-100 hover:scale-105`}
               onClick={() => onChange("exterior", swatch.name)}
             >
               <Image
@@ -42,7 +42,7 @@ function Configurator({ onChange, exterior, interior, wheel }) {
           {interiorSwatch.map((swatch) => (
             <button
               key={swatch.id}
-              className={`${swatch.name === interior && "ring"} rounded-full ring-blue-300 duration-100 hover:scale-105`}
+              className={`${swatch.name === interior && "ring"} rounded-full ring-blue-300 ring-offset-2 duration-100 hover:scale-105`}
               onClick={() => onChange("interior", swatch.name)}
             >
               <Image
@@ -66,7 +66,7 @@ function Configurator({ onChange, exterior, interior, wheel }) {
           {wheelSwatch.map((swatch) => (
             <button
               key={swatch.id}
-              className={`${swatch.name === wheel && "ring"} ring-blue-300 duration-100 hover:scale-105`}
+              className={`${swatch.name === wheel && "ring"} ring-blue-300 ring-offset-2 duration-100 hover:scale-105`}
               onClick={() => onChange("wheel", swatch.name)}
             >
               <Image
